@@ -16,13 +16,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: "npm"
+          node-version: 22
+          cache: "yarn"
 
       - name: Install dependencies
         run: |
-          npm i
-          npm i -g @vscode/vsce
+          yarn i
+          yarn i -g @vscode/vsce
 
       - name: Package
         run: vsce package --pre-release
@@ -36,8 +36,8 @@ jobs:
 
       - name: Edit AutoBuild Release
         run: |
-            gh release upload autobuild --clobber *.vsix
-            gh release edit autobuild --title "AutoBuild - $RELEASE_TAG"
+          gh release upload autobuild --clobber *.vsix
+          gh release edit autobuild --title "AutoBuild - $RELEASE_TAG"
         env:
-            GITHUB_TOKEN: ${{ secrets.TOKEN }}
-            RELEASE_TAG: ${{ env.release_tag }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          RELEASE_TAG: ${{ env.release_tag }}

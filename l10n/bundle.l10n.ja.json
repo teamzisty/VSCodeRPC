@@ -11,5 +11,7 @@
   "RPC has been initiated.": "Discord RPCが開始されました。",
   "RPC has been reconnected.": "Discord RPCが再接続されました。",
   "RPC has been stopped.": "Discord RPCが停止しました。",
+  "The default client ID for Discord RPC has changed. Press copy to get the new ID.": "Discord RPC のデフォルトのクライアントIDが変わりました。コピーを押して、新しいIDを取得します。",
+  "Copy": "コピー",
   "Error during Toggle Private Mode: {0}": "プライベートモードを切り替えているときにエラーが発生しました: {0}"
 }

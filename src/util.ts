@@ -19,7 +19,7 @@ import axios from "axios";
 let rpc = new Client({
   clientId:
     workspace.getConfiguration("vscoderpc").get("clientId") ||
-    "1147502929687875614",
+    "1317390673556803666",
 });
 
 //Idle checker
@@ -37,6 +37,19 @@ export async function init(context: ExtensionContext) {
   //Register the events and commands
   registerEvents(context);
   registerCommands(context);
+
+  const message = window.showInformationMessage(
+    l10n.t(
+      "The default client ID for Discord RPC has changed. Press copy to get the new ID."
+    ),
+    l10n.t("Copy")
+  );
+  message.then(async (value) => {
+    if (value == "Copy" || value == "コピー") {
+      const clipboard = (await import("clipboardy")).default;
+      clipboard.writeSync("1317390673556803666");
+    }
+  });
 
   //Log that the extension is activated
   logInfo("[util.ts : init()] Login to Discord RPC, and update the RPC.");
@@ -87,8 +100,8 @@ async function updateRPC(vscodeTextDocument: TextDocument | undefined) {
       //If the file is empty and private mode is not enabled
       rpc.user?.setActivity({
         details: workspace.name
-        ? l10n.t(`In workspace {0}.`, workspace.name)
-        : l10n.t(`There is no active workspace.`),
+          ? l10n.t(`In workspace {0}.`, workspace.name)
+          : l10n.t(`There is no active workspace.`),
         state: l10n.t(`There are no active files.`),
         startTimestamp: date,
         largeImageKey: "vscode",
@@ -109,8 +122,8 @@ async function updateRPC(vscodeTextDocument: TextDocument | undefined) {
     if (e.toString().includes("reading 'fileName")) {
       rpc.user?.setActivity({
         details: workspace.name
-        ? l10n.t(`In workspace {0}.`, workspace.name)
-        : l10n.t(`There is no active workspace.`),
+          ? l10n.t(`In workspace {0}.`, workspace.name)
+          : l10n.t(`There is no active workspace.`),
         state: l10n.t(`There are no active files.`),
         startTimestamp: date,
         largeImageKey: "vscode",
@@ -137,8 +150,8 @@ async function notFocusedRPC() {
       //If the file is not empty and private mode is not enabled
       rpc.user?.setActivity({
         details: workspace.name
-        ? l10n.t(`In workspace {0}.`, workspace.name)
-        : l10n.t(`There is no active workspace.`),
+          ? l10n.t(`In workspace {0}.`, workspace.name)
+          : l10n.t(`There is no active workspace.`),
         state: l10n.t(
           `Away from the window. (File: {0})`,
           basename(window.activeTextEditor?.document.fileName)
@@ -153,8 +166,8 @@ async function notFocusedRPC() {
       //If the file is empty and private mode is not enabled
       rpc.user?.setActivity({
         details: workspace.name
-        ? l10n.t(`In workspace {0}.`, workspace.name)
-        : l10n.t(`There is no active workspace.`),
+          ? l10n.t(`In workspace {0}.`, workspace.name)
+          : l10n.t(`There is no active workspace.`),
         state: l10n.t(`Away from the window. (No active files.)`),
         startTimestamp: date,
         smallImageKey: "idle",
@@ -192,7 +205,7 @@ async function registerCommands(context: ExtensionContext) {
       rpc = new Client({
         clientId:
           workspace.getConfiguration("vscoderpc").get("clientId") ||
-          "1147502929687875614",
+          "1317390673556803666",
       });
 
       //Set the date to the current date

@@ -11,5 +11,7 @@
   "RPC has been initiated.": "RPC has been initiated.",
   "RPC has been reconnected.": "RPC has been reconnected.",
   "RPC has been stopped.": "RPC has been stopped.",
+  "The default client ID for Discord RPC has changed. Press copy to get the new ID.": "The default client ID for Discord RPC has changed. Press copy to get the new ID.",
+  "Copy": "Copy",
   "Error during Toggle Private Mode: {0}": "Error during Toggle Private Mode: {0}"
 }

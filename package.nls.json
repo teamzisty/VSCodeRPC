@@ -5,9 +5,9 @@
     "vscoderpc.reconnectrpc": "VSCodeRPC: Restart Presence",
     "vscoderpc.toggleprivate": "VSCodeRPC: Toggle Private Mode",
     "vscoderpc.enableTitle": "Enabled",
-    "vscoderpc.privatemodeTitle": "Private Mode",
+    "vscoderpc.privateModeTitle": "Private Mode",
     "vscoderpc.clientIdTitle": "Client ID",
     "vscoderpc.enableDescription": "Choose whether to enable this extension",
     "vscoderpc.privatemodeDescription": "When this mode is enabled, file names and workspace names will not be displayed.",
-    "vscoderpc.clientIdDescription": "Use only if you know what this is. The default is \"1147502929687875614\"."
+    "vscoderpc.clientIdDescription": "Use only if you know what this is. The default is \"1317390673556803666\"."
 }
